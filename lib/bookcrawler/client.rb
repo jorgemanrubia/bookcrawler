@@ -33,13 +33,13 @@ module Bookcrawler
     def find_all_entries_by_title(title)
       response = search_book_in_vacuum_by_title(title)
 
-      entries = response.to_h
+      results = response.to_h
       ['ItemSearchResponse', 'Items', 'Item'].each do |attribute_name|
-        next unless entries
-        entries = entries[attribute_name]
+        next unless results
+        results = results[attribute_name]
       end
 
-      (entries || []).collect { |entry| entry_as_object(entry) }
+      (results || []).collect { |result| vacuum_result_as_object(result) }
     end
 
     def search_book_in_vacuum_by_title(title)
@@ -51,7 +51,7 @@ module Bookcrawler
       )
     end
 
-    def entry_as_object(entry)
+    def vacuum_result_as_object(entry)
       OpenStruct.new(entry['ItemAttributes'])
     end
 
