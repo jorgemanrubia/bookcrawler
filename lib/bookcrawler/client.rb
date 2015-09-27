@@ -31,12 +31,7 @@ module Bookcrawler
     end
 
     def find_all_entries_by_title(title)
-      response = vacuum_client.item_search(
-          query: {
-              'Keywords' => title,
-              'SearchIndex' => 'Books'
-          }
-      )
+      response = search_book_in_vacuum_by_title(title)
 
       entries = response.to_h
       ['ItemSearchResponse', 'Items', 'Item'].each do |attribute_name|
@@ -45,6 +40,15 @@ module Bookcrawler
       end
 
       (entries || []).collect { |entry| entry_as_object(entry) }
+    end
+
+    def search_book_in_vacuum_by_title(title)
+      vacuum_client.item_search(
+          query: {
+              'Keywords' => title,
+              'SearchIndex' => 'Books'
+          }
+      )
     end
 
     def entry_as_object(entry)
