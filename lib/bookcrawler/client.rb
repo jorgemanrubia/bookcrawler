@@ -22,11 +22,7 @@ module Bookcrawler
 
     def configure_vacuum_client
       Vacuum.new.tap do |client|
-        client.configure(
-            aws_access_key_id: 'AKIAI6UFMJZZXGACVVGQ',
-            aws_secret_access_key: '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',
-            associate_tag: 'jorgmanrpersp-20'
-        )
+        client.configure
       end
     end
 
