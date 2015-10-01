@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bookcrawler (0.1.0)
+    bookcrawler (0.3.0)
       vacuum (~> 1.3.0)
       vcr (~> 2.9.3)
       webmock (~> 1.19.0)
