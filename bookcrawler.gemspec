@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Jorge Manrubia"]
   spec.email         = ["jorge.manrubia@gmail.com"]
 
-  spec.summary       = %q{Fetch metadata for books}
+  spec.summary       = %q{Simple mechanism for fetching books metadata using Amazon Product Advertising API}
   spec.description   = %q{}
   spec.homepage      = "."
   spec.license       = "MIT"
