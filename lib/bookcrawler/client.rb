@@ -22,7 +22,9 @@ module Bookcrawler
 
     def configure_vacuum_client
       Vacuum.new.tap do |client|
-        client.configure
+        client.configure(
+            associate_tag: ENV['AMAZON_ASSOCIATES_TRACKING_ID']
+        )
       end
     end
 
