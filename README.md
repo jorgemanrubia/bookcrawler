@@ -40,7 +40,7 @@ book = crawler.find_by_title('A Clash of Kings')
 #   cover_url: "http://...">
 ```
 
-You can fetch the book cover from `cover_url`. Support for covers is not official in the [Amazon Product Advertising API](https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html). The url is generated according to [this article](http://aaugh.com/imageabuse.html).
+You can fetch the book cover at `cover_url`. Support for covers is not official in the [Amazon Product Advertising API](https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html). The url is generated according to [this article](http://aaugh.com/imageabuse.html).
 
 This gem uses [Vacuum](https://github.com/hakanensari/vacuum) under the hood.
 
