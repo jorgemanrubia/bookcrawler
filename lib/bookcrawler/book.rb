@@ -9,5 +9,10 @@ module Bookcrawler
         self.send("#{key}=", value)
       end
     end
+
+    def cover_url
+      #see http://aaugh.com/imageabuse.html
+      "http://images.amazon.com/images/P/#{asin}.01.ZTZZZZZZ.jpg"
+    end
   end
 end
