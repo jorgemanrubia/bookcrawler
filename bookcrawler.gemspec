@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Simple mechanism for fetching books metadata using Amazon Product Advertising API}
   spec.description   = %q{}
-  spec.homepage      = "."
+  spec.homepage      = "https://github.com/jorgemanrubia/bookcrawler"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
