@@ -15,6 +15,13 @@ class ClientTest < Minitest::Test
     end
   end
 
+  def test_multiple_authors_handling
+    VCR.use_cassette('test_multiple_authors_handling') do
+      book = @crawler.find_by_title('Cognitive Computing and Big Data Analytics')
+      assert_equal 'Judith Hurwitz, Marcia Kaufman, Adrian Bowles', book.author
+    end
+  end
+
   def test_find_by_title_returns_nil_when_not_found
     VCR.use_cassette('test_find_by_title_returns_nil_when_not_found') do
       assert_nil @crawler.find_by_title('thisbookdontexist')

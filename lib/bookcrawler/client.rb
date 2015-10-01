@@ -58,9 +58,12 @@ module Bookcrawler
     def create_book_from_vacuum_entry(target_entry)
       Book.new asin: target_entry['ASIN'],
                title: target_entry['Title'],
-               author: target_entry['Author'],
+               author: process_author(target_entry['Author']),
                detail_page_url: target_entry['DetailPageURL']
     end
 
+    def process_author(author_or_authors)
+      [author_or_authors].flatten.join(', ')
+    end
   end
 end
