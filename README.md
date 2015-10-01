@@ -33,11 +33,11 @@ crawler = Bookcrawler::Client.new
 book = crawler.find_by_title('A Clash of Kings')
 
 # <Bookcrawler::Book:
-    asin: "0553579908",
-    title: "A Clash of Kings (A Song of Ice and Fire, Book 2)",
-    author: "George R. R. Martin",
-    detail_page_url: "http://...",
-    cover_url: "http://...">
+#   asin: "0553579908",
+#   title: "A Clash of Kings (A Song of Ice and Fire, Book 2)",
+#   author: "George R. R. Martin",
+#   detail_page_url: "http://...",
+#   cover_url: "http://...">
 ```
 
 You can fetch the book cover from `cover_url`. Support for covers is not official in the [Amazon Product Advertising API](https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html). The url is generated according to [this article](http://aaugh.com/imageabuse.html).
