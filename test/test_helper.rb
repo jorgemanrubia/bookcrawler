@@ -4,6 +4,7 @@ require 'bookcrawler'
 require 'minitest/autorun'
 require 'vcr'
 require 'typhoeus'
+require 'awesome_print'
 
 VCR.configure do |config|
   config.cassette_library_dir = "fixtures/vcr_cassettes"
