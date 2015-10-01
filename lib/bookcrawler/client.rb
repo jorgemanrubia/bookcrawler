@@ -8,7 +8,7 @@ module Bookcrawler
       target_entry = entries[0]
 
       if target_entry
-        Book.new(title: target_entry['Title'])
+        create_book_from_vacuum_entry(target_entry)
       else
         nil
       end
@@ -50,7 +50,16 @@ module Bookcrawler
     end
 
     def vacuum_result_as_object(entry)
-      OpenStruct.new(entry['ItemAttributes'])
+      attributes = entry['ItemAttributes']
+      attributes.merge!('ASIN' => entry['ASIN'], 'DetailPageURL' => entry['DetailPageURL'])
+      OpenStruct.new(attributes)
+    end
+
+    def create_book_from_vacuum_entry(target_entry)
+      Book.new asin: target_entry['ASIN'],
+               title: target_entry['Title'],
+               author: target_entry['Author'],
+               detail_page_url: target_entry['DetailPageURL']
     end
 
   end
