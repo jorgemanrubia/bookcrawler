@@ -37,7 +37,7 @@ module Bookcrawler
         results = results[attribute_name]
       end
 
-      (results || []).collect { |result| vacuum_result_as_object(result) }
+      ([results] || []).collect { |result| vacuum_result_as_object(result) }
     end
 
     def search_book_in_vacuum_by_title(title)
