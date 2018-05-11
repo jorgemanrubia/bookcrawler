@@ -36,7 +36,7 @@ module Bookcrawler
         next unless results
         results = results[attribute_name]
       end
-
+      results = [results] unless results.is_a?(Array)
       (results || []).collect { |result| vacuum_result_as_object(result) }
     end
 
