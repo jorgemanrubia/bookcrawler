@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
 
 
   spec.add_dependency "vcr", "~> 2.9.3"
-  spec.add_dependency "vacuum", "~> 1.3.0"
+  spec.add_dependency "vacuum", "~> 2.1.1"
   spec.add_dependency "webmock", "~> 1.19.0"
 
   spec.add_development_dependency "typhoeus"
